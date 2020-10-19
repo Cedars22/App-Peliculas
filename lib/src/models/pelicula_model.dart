@@ -62,8 +62,10 @@ class Pelicula {
     releaseDate = json['release_date'];
   }
 }
+
+//Esta parte es la que tiene Fernando en su codigo del video que voy (101)
+
 // class Pelicula {
-//   String uniqueId;
 
 //   int voteCount;
 //   int id;
@@ -112,5 +114,7 @@ class Pelicula {
 //     adult = json['adult'];
 //     overview = json['overview'];
 //     releaseDate = json['release_date'];
+//   }
+// }
 //   }
 // }
