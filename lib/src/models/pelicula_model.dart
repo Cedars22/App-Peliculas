@@ -116,5 +116,3 @@ class Pelicula {
 //     releaseDate = json['release_date'];
 //   }
 // }
-//   }
-// }
