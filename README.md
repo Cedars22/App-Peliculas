@@ -1,4 +1,4 @@
-# peliculas2
+# peliculas
 
 A new Flutter project.
 

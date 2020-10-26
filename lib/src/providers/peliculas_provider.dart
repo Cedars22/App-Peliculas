@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 
 import 'dart:convert';
 
-import 'package:peliculas2/src/Models/pelicula_model.dart';
+import 'package:peliculas/src/Models/pelicula_model.dart';
 
 class PeliculasProvider {
   String _apikey = 'e0ad99874f983d3e65371a4d88f50bc7';
