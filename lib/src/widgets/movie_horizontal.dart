@@ -11,7 +11,7 @@ class MovieHorizontal extends StatelessWidget {
     final _screenSize = MediaQuery.of(context).size;
 
     return Container(
-      height: _screenSize.height * 0.3,
+      height: _screenSize.height * 0.2,
       child: PageView(
         pageSnapping: false,
         controller: PageController(
@@ -30,7 +30,7 @@ class MovieHorizontal extends StatelessWidget {
         child: Column(
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
                 image: NetworkImage(pelicula.getPosterImg()),
                 placeholder: AssetImage('assets/img/no-image.jpg'),

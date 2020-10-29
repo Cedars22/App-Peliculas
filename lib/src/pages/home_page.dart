@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Peliculas en cines'),
         backgroundColor: Colors.indigoAccent,
-        actions: [
+        actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {},
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
+          children: <Widget>[
             _swiperTarjetas(),
             _footer(context),
           ],
@@ -66,9 +66,7 @@ class HomePage extends StatelessWidget {
             future: peliculasProvider.getPopulares(),
             builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
               if (snapshot.hasData) {
-                return MovieHorizontal(
-                  peliculas: snapshot.data,
-                );
+                return MovieHorizontal(peliculas: snapshot.data);
               } else {
                 return Center(child: CircularProgressIndicator());
               }
