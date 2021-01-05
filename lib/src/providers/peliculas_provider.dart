@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:peliculas/src/Models/pelicula_model.dart';
+//import 'package:peliculas/src/Models/pelicula_model.dart';
 import 'package:peliculas/src/models/actores_model.dart';
+import 'package:peliculas/src/models/pelicula_model.dart';
 
 class PeliculasProvider {
   String _apikey = 'e0ad99874f983d3e65371a4d88f50bc7';
@@ -73,5 +74,12 @@ class PeliculasProvider {
     final cast = new Cast.fromJsonList(decodedData['cast']);
 
     return cast.actores;
+  }
+
+  Future<List<Pelicula>> buscarPelicula() async {
+    final url = Uri.https(_url, '3/search/movie',
+        {'api_key': _apikey, 'language': _language, 'query': query});
+
+    return await _procesarRespuesta(url);
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:peliculas/src/models/actores_model.dart';
 import 'package:peliculas/src/models/pelicula_model.dart';
@@ -55,11 +53,11 @@ class PeliculaDetalle extends StatelessWidget {
 
   Widget _posterTitulo(BuildContext context, Pelicula pelicula) {
     return Container(
-      padding: EdgeInsets.symmetric(),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
           Hero(
-            tag: pelicula.id,
+            tag: pelicula.uniqueId,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image(

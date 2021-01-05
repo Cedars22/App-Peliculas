@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:peliculas/src/models/pelicula_model.dart';
-import 'package:peliculas/src/pages/pelicula_detalle.dart';
+//import 'package:peliculas/src/pages/pelicula_detalle.dart';
 
 class MovieHorizontal extends StatelessWidget {
   final List<Pelicula> peliculas;
@@ -37,12 +37,14 @@ class MovieHorizontal extends StatelessWidget {
   }
 
   Widget _tarjeta(BuildContext context, Pelicula pelicula) {
+    pelicula.uniqueId = '${pelicula.id}-poster';
+
     final tarjeta = Container(
       margin: EdgeInsets.only(right: 15.0),
       child: Column(
         children: <Widget>[
           Hero(
-            tag: pelicula.id,
+            tag: pelicula.uniqueId,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
