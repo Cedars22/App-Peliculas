@@ -66,23 +66,37 @@ class PeliculaDetalle extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            width: 4,
+          ),
           Flexible(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   pelicula.title,
                   style: Theme.of(context).textTheme.subtitle1,
                   overflow: TextOverflow.ellipsis,
+                  textScaleFactor: 1.3,
                 ),
-                Text(pelicula.originalTitle,
-                    style: Theme.of(context).textTheme.subtitle2,
-                    overflow: TextOverflow.ellipsis),
+                Text(
+                  pelicula.originalTitle,
+                  style: Theme.of(context).textTheme.subtitle2,
+                  overflow: TextOverflow.ellipsis,
+                  textScaleFactor: 1.1,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.star_border),
-                    Text(pelicula.voteAverage.toString(),
-                        style: Theme.of(context).textTheme.subtitle2),
+                    Icon(
+                      Icons.star_border,
+                      size: 40,
+                    ),
+                    Text(
+                      pelicula.voteAverage.toString(),
+                      style: Theme.of(context).textTheme.subtitle2,
+                      textScaleFactor: 1.5,
+                    ),
                   ],
                 )
               ],
@@ -99,6 +113,7 @@ class PeliculaDetalle extends StatelessWidget {
       child: Text(
         pelicula.overview,
         textAlign: TextAlign.justify,
+        textScaleFactor: 1.1,
       ),
     );
   }
@@ -140,6 +155,7 @@ class PeliculaDetalle extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: FadeInImage(
                 placeholder: AssetImage('assets/img/no-image.jpg'),
+                height: 150,
                 image: NetworkImage(actor.getFoto())),
           ),
           Text(

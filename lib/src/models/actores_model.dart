@@ -16,7 +16,6 @@ class Actor {
   bool adult;
   int gender;
   int id;
-  Department knownForDepartment;
   String name;
   String originalName;
   double popularity;
@@ -25,14 +24,12 @@ class Actor {
   String character;
   String creditId;
   int order;
-  Department department;
   String job;
 
   Actor({
     this.adult,
     this.gender,
     this.id,
-    this.knownForDepartment,
     this.name,
     this.originalName,
     this.popularity,
@@ -41,7 +38,6 @@ class Actor {
     this.character,
     this.creditId,
     this.order,
-    this.department,
     this.job,
   });
 
@@ -49,7 +45,6 @@ class Actor {
     adult = json['adult'];
     gender = json['gender'];
     id = json['id'];
-    knownForDepartment = json['known_for_department'];
     name = json['name'];
     originalName = json['original_name'];
     popularity = json['popularity'];
@@ -58,7 +53,6 @@ class Actor {
     character = json['character'];
     creditId = json['credit_id'];
     order = json['order'];
-    department = json['department'];
     job = json['job'];
   }
 
@@ -69,20 +63,4 @@ class Actor {
       return 'https://image.tmdb.org/t/p/w500/$profilePath';
     }
   }
-}
-
-enum Department {
-  ACTING,
-  CREW,
-  DIRECTING,
-  PRODUCTION,
-  SOUND,
-  ART,
-  EDITING,
-  COSTUME_MAKE_UP,
-  CAMERA,
-  WRITING,
-  VISUAL_EFFECTS,
-  CREATOR,
-  LIGHTING
 }

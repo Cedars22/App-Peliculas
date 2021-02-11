@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Wrap(
+          alignment: WrapAlignment.spaceAround,
           children: <Widget>[
             _swiperTarjetas(),
             _footer(context),

@@ -25,7 +25,7 @@ class MovieHorizontal extends StatelessWidget {
     });
 
     return Container(
-      height: _screenSize.height * 0.2,
+      height: _screenSize.height * 0.25,
       child: PageView.builder(
         pageSnapping: false,
         controller: _pageController,
@@ -41,7 +41,7 @@ class MovieHorizontal extends StatelessWidget {
 
     final tarjeta = Container(
       margin: EdgeInsets.only(right: 15.0),
-      child: Column(
+      child: Wrap(
         children: <Widget>[
           Hero(
             tag: pelicula.uniqueId,
