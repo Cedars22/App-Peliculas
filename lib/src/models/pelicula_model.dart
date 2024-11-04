@@ -1,10 +1,9 @@
 class Peliculas {
-  List<Pelicula> items = new List();
+  List<Pelicula> items = [];
 
   Peliculas();
 
   Peliculas.fromJsonList(List<dynamic> jsonList) {
-    if (jsonList == null) return;
     for (var item in jsonList) {
       final pelicula = new Pelicula.fromJsonMap(item);
       items.add(pelicula);
@@ -31,38 +30,38 @@ class Pelicula {
   String releaseDate;
 
   Pelicula({
-    this.popularity,
-    this.voteCount,
-    this.video,
-    this.posterPath,
-    this.id,
-    this.adult,
-    this.backdropPath,
-    this.originalLanguage,
-    this.originalTitle,
-    this.genreIds,
-    this.title,
-    this.voteAverage,
-    this.overview,
-    this.releaseDate,
-  });
+    required this.popularity,
+    required this.voteCount,
+    required this.video,
+    required this.posterPath,
+    required this.id,
+    required this.adult,
+    required this.backdropPath,
+    required this.originalLanguage,
+    required this.originalTitle,
+    required this.genreIds,
+    required this.title,
+    required this.voteAverage,
+    required this.overview,
+    required this.releaseDate,
+  }) : uniqueId = '';
 
-  Pelicula.fromJsonMap(Map<String, dynamic> json) {
-    popularity = json['popularity'] / 1;
-    voteCount = json['vote_count'];
-    video = json['video'];
-    posterPath = json['poster_path'];
-    id = json['id'];
-    adult = json['adult'];
-    backdropPath = json['backdrop_path'];
-    originalLanguage = json['original_language'];
-    originalTitle = json['original_title'];
-    genreIds = json['genre_ids'].cast<int>();
-    title = json['title'];
-    voteAverage = json['vote_average'] / 1;
-    overview = json['overview'];
-    releaseDate = json['release_date'];
-  }
+  Pelicula.fromJsonMap(Map<String, dynamic> json)
+      : popularity = json['popularity'] / 1,
+        voteCount = json['vote_count'],
+        video = json['video'],
+        posterPath = json['poster_path'],
+        id = json['id'],
+        adult = json['adult'],
+        backdropPath = json['backdrop_path'],
+        originalLanguage = json['original_language'],
+        originalTitle = json['original_title'],
+        genreIds = json['genre_ids'].cast<int>(),
+        title = json['title'],
+        voteAverage = json['vote_average'] / 1,
+        overview = json['overview'],
+        releaseDate = json['release_date'],
+        uniqueId = '';
 
   getPosterImg() {
     if (posterPath == null) {

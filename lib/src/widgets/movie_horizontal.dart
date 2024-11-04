@@ -6,7 +6,7 @@ class MovieHorizontal extends StatelessWidget {
   final List<Pelicula> peliculas;
   final Function siguientePagina;
 
-  MovieHorizontal({@required this.peliculas, @required this.siguientePagina});
+  MovieHorizontal({required this.peliculas, required this.siguientePagina});
 
   final _pageController = new PageController(
     initialPage: 1,
@@ -59,7 +59,7 @@ class MovieHorizontal extends StatelessWidget {
           Text(
             pelicula.title,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).textTheme.bodySmall,
           )
         ],
       ),
@@ -91,7 +91,7 @@ class MovieHorizontal extends StatelessWidget {
             Text(
               pelicula.title,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.caption,
+              style: Theme.of(context).textTheme.bodySmall,
             )
           ],
         ),

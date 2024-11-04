@@ -6,7 +6,8 @@ import 'package:peliculas/src/providers/peliculas_provider.dart';
 class PeliculaDetalle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Pelicula pelicula = ModalRoute.of(context).settings.arguments;
+    final Pelicula pelicula =
+        ModalRoute.of(context)?.settings.arguments as Pelicula;
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -75,13 +76,13 @@ class PeliculaDetalle extends StatelessWidget {
               children: [
                 Text(
                   pelicula.title,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.bodySmall,
                   overflow: TextOverflow.ellipsis,
                   textScaleFactor: 1.3,
                 ),
                 Text(
                   pelicula.originalTitle,
-                  style: Theme.of(context).textTheme.subtitle2,
+                  style: Theme.of(context).textTheme.labelSmall,
                   overflow: TextOverflow.ellipsis,
                   textScaleFactor: 1.1,
                 ),
@@ -94,7 +95,7 @@ class PeliculaDetalle extends StatelessWidget {
                     ),
                     Text(
                       pelicula.voteAverage.toString(),
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: Theme.of(context).textTheme.labelSmall,
                       textScaleFactor: 1.5,
                     ),
                   ],
@@ -125,7 +126,7 @@ class PeliculaDetalle extends StatelessWidget {
       future: peliProvider.getCast(pelicula.id.toString()),
       builder: (context, AsyncSnapshot<List> snapshot) {
         if (snapshot.hasData) {
-          return _crearActoresPageView(snapshot.data);
+          return _crearActoresPageView(snapshot.data!.cast<Actor>());
         } else {
           return Center(
             child: CircularProgressIndicator(),
