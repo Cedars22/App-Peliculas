@@ -71,6 +71,8 @@ class Pelicula {
     }
   }
 
+// 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6V_R6WMnHzN5bpexR-vQ1tNickx9phBGTHA&usqp=CAU'
+
   getBackgroundImg() {
     if (posterPath == null) {
       return 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6V_R6WMnHzN5bpexR-vQ1tNickx9phBGTHA&usqp=CAU';
