@@ -25,7 +25,7 @@ class PeliculasProvider {
       _popularesStreamController.stream;
 
   void disposeStreams() {
-    _popularesStreamController?.close();
+    _popularesStreamController.close();
   }
 
   Future<List<Pelicula>> _procesarRespuesta(Uri url) async {
@@ -73,7 +73,8 @@ class PeliculasProvider {
     final decodedData = json.decode(resp.body);
 
     final cast = new Cast.fromJsonList(decodedData['cast']);
-
+    print('peticion de actores');
+    print(cast.actores);
     return cast.actores;
   }
 
