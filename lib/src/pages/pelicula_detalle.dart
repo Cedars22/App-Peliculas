@@ -126,8 +126,11 @@ class PeliculaDetalle extends StatelessWidget {
       future: peliProvider.getCast(pelicula.id.toString()),
       builder: (context, AsyncSnapshot<List> snapshot) {
         if (snapshot.hasData) {
+          print("Lena");
+          print(snapshot.data);
           return _crearActoresPageView(snapshot.data!.cast<Actor>());
         } else {
+          print("Cargando");
           return Center(
             child: CircularProgressIndicator(),
           );
